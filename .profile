@@ -32,6 +32,5 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 #locale
 export LC_CTYPE="zh_CN.UTF-8"
-export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin
-export EDITOR="emacsclient"
+export EDITOR=emacsclient
 export ALTERNATE_EDITOR=""
