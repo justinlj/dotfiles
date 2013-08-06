@@ -105,8 +105,8 @@ fname))
 ;(global-set-key [f12] 'my-fullscreen);F12 全屏
 (global-set-key [f12] 'semantic-ia-fast-jump)
 (global-set-key [S-f12] 'semantic-ia-fast-jump-back)
-(global-set-key (kbd "C-,") 'backward-page);文件首
-(global-set-key (kbd "C-.") 'forward-page);文件尾
+;;(global-set-key (kbd "C-,") 'backward-page);文件首
+;;(global-set-key (kbd "C-.") 'forward-page);文件尾
 
 ;;全屏
 ;(defun my-fullscreen ()
@@ -179,15 +179,15 @@ auto-mode-alist))
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
+
 (load-file "~/.emacs.d/site-lisp/emacs-for-python/epy-init.el")
-;;(setq load-path (cons "/home/kevin/.emacs.d/" load-path))
-;;(setq auto-mode-alist
-;;      (cons '("\\.py$" . python-mode) auto-mode-alist))
-;;(setq interpreter-mode-alist
-;;      (cons '("python" . python-mode)
-;;	    interpreter-mode-alist))
-;;(load-file "/path/to/emacs-for-python/epy-init.el")
-;;(autoload 'python-mode "python-mode" "Python editing mode." t)
+(setq load-path (cons "~/.emacs.d/" load-path))
+;; (setq auto-mode-alist
+;;       (cons '("\\.py$" . python-mode) auto-mode-alist))
+;; (setq interpreter-mode-alist
+;;       (cons '("python" . python-mode)
+;;     interpreter-mode-alist))
+;; (autoload 'python-mode "python-mode" "Python editing mode." t)
 ;;; add these lines if you like color-based syntax highlighting
 
 ;(global-font-lock-mode t)
@@ -247,6 +247,7 @@ auto-mode-alist))
 (require 'fill-column-indicator)
 (add-hook 'c-mode-hook (lambda()(fci-mode 1)))
 ;;CEDET
+(setq ede-auto-add-method 'never)
 (add-hook 'c-mode-hook (lambda()(global-ede-mode 1)))
 (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
 				  global-semanticdb-minor-mode
@@ -280,10 +281,24 @@ auto-mode-alist))
 ;;whitespace-style
 ;; (setq-default show-trailing-whitespace t) ; use whitespace-mode instead
 ;(setq whitespace-style '(face trailing lines-tail newline empty tab-mark))
-(setq whitespace-style '(face trailing newline empty tab-mark tabs))
+(setq whitespace-style '(face trailing newline empty tab-mark tabs newline-mark))
 (when window-system
   (setq whitespace-style (append whitespace-style '(tabs newline-mark))))
 (global-whitespace-mode t)
 (eval-after-load "whitespace"
   `(defun whitespace-post-command-hook ()
      "Hack whitespace, it's very slow in c++-mode."))
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(ede-project-directories (quote ("/tmp/myproject/src" "/tmp/myproject/include" "/tmp/myproject" "/tmp/project"))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+(put 'set-goal-column 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
