@@ -1,0 +1,27 @@
+!look and feel
+UXTerm.termName: UXTerm-256color
+UXTerm.geometry: 80x36
+!UXTerm*scrollBar: true
+!UXTerm*rightScrollBar: true
+UXTerm*loginshell: true
+UXTerm*cursorBlink: true
+!UXTerm*background:  white
+!UXTerm*background: #C7EDCC
+!UXTerm*foreground:  gray
+UXTerm.borderLess: true
+UXTerm.cursorBlink: true
+UXTerm*colorUL: yellow
+UXTerm*colorBD: white
+!fix alt key input
+UXTerm*eightBitInput: false
+UXTerm*metaSendsEscape: true
+!mouse selection to copy, ctrl-v to paste
+!Ctrl p to print screen content to file
+UXTerm*selectToClipboard:true
+!Term*VT100.Translations: #override \
+!   Ctrl <KeyPress>V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+!   <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFERO) \n\
+!   Ctrl <KeyPress> P: print() \n
+!Font
+UXTerm*vt100.initialFont: 5
+Xcursor.theme: ComixCursors-White-Regular-Slim
