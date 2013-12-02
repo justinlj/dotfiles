@@ -25,3 +25,4 @@ UXTerm*selectToClipboard:true
 !Font
 UXTerm*vt100.initialFont: 5
 Xcursor.theme: ComixCursors-White-Regular-Slim
+UXTerm*forceBoxChars: true
